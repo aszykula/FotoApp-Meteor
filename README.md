@@ -1,8 +1,6 @@
 <<<<<<< HEAD
 # Egzamin poprawka [![Build Status](https://travis-ci.org/aszykula/FotoApp-Meteor.svg?branch=master)](https://travis-ci.org/aszykula/FotoApp-Meteor)
 =======
-# Egzamin poprawka [![Build Status](https://travis-ci.org/aszykula/FotoApp-Meteor.svg?branch=master)](https://travis-ci.org/aszykula/FotoApp-Meteor)
->>>>>>> origin/master
 ##Projekt oparty na Meteorze.
 [Blog - Śmieszne fotki - Meteor](http://aszykula.meteor.com/)
 Zastosowanie Meteora na potrzeby stworzenia mini portalu do umieszczania zdjęć i opisu ich.
