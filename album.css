@@ -1,0 +1,81 @@
+/* CSS declarations go here */
+body {
+    background-image: url(http://aszykula.github.io/images/www.jpg);
+    background-color: rgb(34, 34, 34);
+    background-size: 100%;
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    background-repeat: no-repeat;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    color: #dddddd;
+    margin: 0 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background-color: #222;
+    text-align: center;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 5 ;
+    color: #dddddd;
+}
+h2 {
+    text-align: center;
+    font-size: 3 ;
+    color: #dddddd;
+}
+
+.album-black {
+    color: #666;
+    font-size: 14px;
+    text-align: match-parent;
+    text-align: center;
+    border-style: solid;
+    border-color: rgba(69, 202, 255, 0.51);
+    border-width: 1px;
+    background-color: rgba(0, 0, 0, 0.44);
+    margin: 5px 0px 5px 0px;
+    padding: 6px 6px 2px 6px;
+}
+
+.album-white {
+    color: #cdeaff;
+    font-size: 14px;
+    text-align: match-parent;
+    text-align: center;
+    border-style: solid none solid none;
+    border-color: rgba(0, 153, 255, 0.51);
+    border-width: 2px 1px 0px 1px;
+    background-color: rgba(0, 0, 0, 0.62);
+    margin: 5px 0px 5px 0px;
+    padding: 6px 6px 2px 6px;
+}
+
+
+.album {
+    color: #666;
+    font-size: 14px;
+    text-align: match-parent;
+    text-align: center;
+    border-style: solid;
+    border-color: #bbb;
+    border-width: 1px;
+    background-color: rgba(69, 202, 255, 0.44);
+    margin: 5px 0px 5px 0px;
+    padding: 3px 3px 0px 3px;
+}
+
+.stopka {
+    font-size: 12px;
+    color: rgba(255, 247, 0, 0.85);
+    font-style: italic;
+    bottom: 0;
+    z-index: 1000;
+}

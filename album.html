@@ -1,0 +1,77 @@
+<head>
+   <title>Zbior fotek - aszykula</title>
+   <style>
+    body {
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: repeat-x;
+        background-color: darkslategray;
+        margin-right: 70px;
+        margin-left: 70px;
+        color: #fff;
+    }
+    table {
+        //background-color: #eee;
+        color: #000;
+        align-self: center;
+    }
+    a:link {color: #45caff; text-decoration: none}
+    a:visited {color: #45caff;}
+    a:hover {color: #cdeaff;}
+    a:active {color: #ffffff;}
+   </style>
+</head>
+<body>
+   {{>main}}
+</body>
+
+
+<template name="main">
+<table align="center" style="padding: 10% 10% 5 5">
+    <table class="album-black" width="100%" height="100%">
+        <table class="stopka" width="100%"><tr>
+            <td align="left"><div>
+               <a href="https://github.com/aszykula/aszykula.github.io" target="_blank">Zobacz na GitHubie - źródła.</a></div></td>
+            <td align="right"><div><a href="http://aszykula.github.io/" target="_blank">About me - Artur Szykuła.</a></div></td>
+        </tr></table>
+   <h1>Portal - śmieszne fotki.</h1>
+    <h2>Podziel się śmiesznymi zdjęciami ;-).</h2>
+    <p style="color: #ddd">Wpisz swój nick, link do zdjęcia - z www oraz opisz nam to zdarzenie.</p>
+    <!--<input type="datetime"  name="data" id="data" size="10" placeholder="Data...">-->
+    <input type="text" name="autor" id="autor" size="14" placeholder="Twój nick...">
+    <input type="text" name="link" id="link" size="18" placeholder="Podaj link do zdjęcia...">
+    <input type="text" name="opis" id="opis" size="32" maxlength="270" placeholder="Umieść opis tutaj">
+    <input type="button" value="Dodaj zdjęcie" class="btn btn-default" id="btn"/>
+
+    <table class="album-white" width="100%">
+<!--
+    <thead>
+        <tr>
+            <td>Link</td>
+            <td>Opis z boku</td>
+        </tr>
+    </thead>
+-->
+<tbody>
+{{#each Album}}
+<tr>
+    <td width="10%"><div style="font-size: 10px; color: #cdeaff">nick:<br></div>{{autor}}</td>
+    <!--<td class="yellow"><img src="{{link}}" height=80px width=auto></td>-->
+    <td class="album" width="10%"><a href="{{link}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;"><img src="{{link}}" height=auto width="150"></a></td>
+    <td>{{opis}}</td>
+</tr>
+{{/each}}
+
+</tbody>
+   </table>
+  </table>
+    <tr><td valign="bottom">
+        <table align="center">
+            <tr>
+                <div class="stopka">Aplikacja napisana w Meteorze. Background - Portugalia, zachód słońca w Lagos.</div>
+            </tr>
+        </table>
+    </td></tr>
+</table>
+</template>
+
