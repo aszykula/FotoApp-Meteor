@@ -2,33 +2,89 @@ var assert = require('assert');
 
 suite('Test albumu.', function() {
 
-
-  test('server initialization', function(done, server) {
+//testy jako server
+  test('server - initialization', function(done, server) {
     server.eval(function() {
-      var tests = Album.find().fetch();
-      emit('tests', tests);
-    }).once('tests', function(tests) {
-      assert.equal(tests.length, 0);
+      var testinit = Album.find().fetch();
+      emit('testinit', testinit);
+    }).once('testinit', function(testinit) {
+      assert.equal(testinit.length, 0);
       done();
     });
   });
 
+  test('server - insert nick, link and note', function(done, server) {
+    server.eval(function() {
+        Album.insert({
+          autor: 'Artur 3',
+          link: 'http://obrazek.png',
+          opis: 'logo',
+        });
+    var dane = Album.find({
+          autor: 'Artur 3',
+          link: 'http://obrazek.png',
+          opis: 'logo'}).fetch();
+    emit('dane', dane);
+    });
+
+    client.once('dane', function(dane) {
+    assert.equal(dane.length, 1);
+      done();
+    });
+  });
+    
+  test('server - insert nick, link', function(done, server) {
+    server.eval(function() {
+        Album.insert({
+          autor: 'Artur 2',
+          link: 'http://obrazek.png',
+        });
+    var dane = Album.find({
+          autor: 'Artur 2',
+          link: 'http://obrazek.png'}).fetch();
+    emit('dane', dane);
+    });
+
+    client.once('dane', function(dane) {
+    assert.equal(dane.length, 0);
+      done();
+    });
+  });
+
+  test('server - insert nick', function(done, server) {
+    server.eval(function() {
+        Album.insert({
+          autor: 'Artur 1',
+        });
+    var dane = Album.find({
+          autor: 'Artur 1'}).fetch();
+    emit('dane', dane);
+    });
+
+    client.once('dane', function(dane) {
+    assert.equal(dane.length, 0);
+      done();
+    });
+  });
+
+
+    //testy jako klient
   test('insert nick, link and note', function(done, client) {
     client.eval(function() {
         Album.insert({
-          autor: 'Jan',
+          autor: 'Bart',
           link: 'http://pngimg.com/upload/car_logo_PNG1667.png',
-          opis: 'logo VW',
+          opis: 'logo',
         });
-    var tests = Album.find({
-          autor: 'Jan',
+    var dane = Album.find({
+          autor: 'Bart',
           link: 'http://pngimg.com/upload/car_logo_PNG1667.png',
-          opis: 'logo VW'}).fetch();
-    emit('tests', tests);
+          opis: 'logo'}).fetch();
+    emit('dane', dane);
     });
 
-    client.once('tests', function(tests) {
-    assert.equal(tests.length, 1);
+    client.once('dane', function(dane) {
+    assert.equal(dane.length, 1);
       done();
     });
   });
