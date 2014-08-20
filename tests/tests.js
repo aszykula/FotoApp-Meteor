@@ -27,7 +27,7 @@ suite('Test albumu.', function() {
     emit('dane', dane);
     });
 
-    client.once('dane', function(dane) {
+    server.once('dane', function(dane) {
     assert.equal(dane.length, 1);
       done();
     });
@@ -45,7 +45,7 @@ suite('Test albumu.', function() {
     emit('dane', dane);
     });
 
-    client.once('dane', function(dane) {
+    server.once('dane', function(dane) {
     assert.equal(dane.length, 0);
       done();
     });
@@ -61,7 +61,7 @@ suite('Test albumu.', function() {
     emit('dane', dane);
     });
 
-    client.once('dane', function(dane) {
+    server.once('dane', function(dane) {
     assert.equal(dane.length, 0);
       done();
     });
