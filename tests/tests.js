@@ -46,7 +46,7 @@ suite('Test albumu.', function() {
     });
 
     server.once('dane', function(dane) {
-    assert.equal(dane.length, 0);
+    assert.equal(dane.length, 1);
       done();
     });
   });
@@ -62,7 +62,7 @@ suite('Test albumu.', function() {
     });
 
     server.once('dane', function(dane) {
-    assert.equal(dane.length, 0);
+    assert.equal(dane.length, 1);
       done();
     });
   });
