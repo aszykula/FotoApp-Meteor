@@ -73,26 +73,6 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('server - insert autor, link and opis - bledne dane, opis', function(done, server) {
-        server.eval(function() {
-            Album.insert({
-                autor: 'Artur 3 ',
-                link: 'http://obrazek.png',
-                opis: '',
-            });
-            var dane = Album.find({
-                autor: 'Artur 3',
-                link: 'http://obrazek.png',
-                opis: ''}).fetch();
-            emit('dane', dane);
-        });
-
-        server.once('dane', function(dane) {
-            assert.equal(dane.length, 1);
-            done();
-        });
-    });
-
     test('server - insert autor, link - niekompletne dane', function(done, server) {
         server.eval(function() {
             Album.insert({
