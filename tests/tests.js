@@ -197,7 +197,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #12 - insert autor, link and opis - poprawne dane', function(done, server) {
+    test('client #12 - insert autor, link and opis - poprawne dane', function(done, client) {
         client.eval(function() {
             Album.insert({
                 autor: 'Artur 3',
@@ -217,7 +217,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #13 - insert autor, link and opis - bledne dane, link', function(done, server) {
+    test('client #13 - insert autor, link and opis - bledne dane, link', function(done, client) {
         client.eval(function() {
             Album.insert({
                 autor: 'Artur 3',
@@ -237,7 +237,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #14 - insert autor, link and opis - bledne dane, autor', function(done, server) {
+    test('client #14 - insert autor, link and opis - bledne dane, autor', function(done, client) {
         client.eval(function() {
             Album.insert({
                 autor: '',
@@ -257,7 +257,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #15 - insert autor, link - niekompletne dane', function(done, server) {
+    test('client #15 - insert autor, link - niekompletne dane', function(done, client) {
         client.eval(function() {
             Album.insert({
                 autor: 'Artur 2',
@@ -275,7 +275,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #16 - insert autor, opis - niekompletne dane', function(done, server) {
+    test('client #16 - insert autor, opis - niekompletne dane', function(done, client) {
         client.eval(function() {
             Album.insert({
                 autor: 'Artur 3',
@@ -293,7 +293,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #17 - insert link, opis - niekompletne dane', function(done, server) {
+    test('client #17 - insert link, opis - niekompletne dane', function(done, client) {
         client.eval(function() {
             Album.insert({
                 link: 'http://obrazek.png',
@@ -311,7 +311,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #18 - insert link - niekompletne dane', function(done, server) {
+    test('client #18 - insert link - niekompletne dane', function(done, client) {
         client.eval(function() {
             Album.insert({
                 link: 'http://obrazek.png',
@@ -327,7 +327,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #19 - insert autor - niekompletne dane', function(done, server) {
+    test('client #19 - insert autor - niekompletne dane', function(done, client) {
         client.eval(function() {
             Album.insert({
                 autor: 'Artur 1',
@@ -343,7 +343,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('client #20 - insert opis - niekompletne dane', function(done, server) {
+    test('client #20 - insert opis - niekompletne dane', function(done, client) {
         client.eval(function() {
             Album.insert({
                 opis: 'logo',
