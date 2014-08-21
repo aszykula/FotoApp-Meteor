@@ -33,7 +33,7 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('server - insert autor, link and opis - bledne dane, autor', function(done, server) {
+    test('server - insert autor, link and opis - bledne dane, link', function(done, server) {
         server.eval(function() {
             Album.insert({
                 autor: 'Artur 3',
@@ -53,15 +53,15 @@ suite('Test albumu.', function() {
         });
     });
 
-    test('server - insert autor, link and opis - bledne dane, link', function(done, server) {
+    test('server - insert autor, link and opis - bledne dane, autor', function(done, server) {
         server.eval(function() {
             Album.insert({
-                autor: ' ',
+                autor: '',
                 link: 'http://obrazek.png',
                 opis: 'logo',
             });
             var dane = Album.find({
-                autor: ' ',
+                autor: '',
                 link: 'http://obrazek.png',
                 opis: 'logo'}).fetch();
             emit('dane', dane);
@@ -78,12 +78,12 @@ suite('Test albumu.', function() {
             Album.insert({
                 autor: 'Artur 3 ',
                 link: 'http://obrazek.png',
-                opis: ' ',
+                opis: '',
             });
             var dane = Album.find({
                 autor: 'Artur 3',
                 link: 'http://obrazek.png',
-                opis: ' '}).fetch();
+                opis: ''}).fetch();
             emit('dane', dane);
         });
 
