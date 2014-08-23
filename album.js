@@ -1,8 +1,9 @@
-var czyscForm = function()
+var czystyFormularz = function()
 {
   $('#autor').val("");
   $('#link').val("");
   $('#opis').val("");
+  //$('#data').datetimepicker({ format: 'yyyy-mm-dd' });
 }
 
 
@@ -18,28 +19,36 @@ if (Meteor.isClient)
   Template.main.events({
     'click input.btn' : function ()
     {
-      var autor = $('#autor').val();
+      //var data = $('#data').datetimepicker({ format: 'yyyy-mm-dd' });
+      if (Meteor.user())
+          var autor = Meteor.user().profile.name;
+      else
+      {
+          var autor = $('#autor').val();
+      }
       var link = $('#link').val();
       var opis = $('#opis').val();
+
         if(autor!="")
-          if(link!="" && link.indexOf("http:\\")===0)
-            if(opis!="")
+            if(link!="" && link.indexOf("http://")===0)
+                if(opis!="")
                 {
                     Album.insert({autor:autor,link:link,opis:opis});
                     czyscForm();
                 }
+                else
+                {
+                    alert("Wypełnij opis");
+                }
             else
             {
-              alert("Wypełnij opis");
+                alert("Podaj prawidłowy link do zdjęcia na www.\n\n Link do zdjęcia musi być w postaci:\n'http://adresstrony.com//zdjecie.jpg'");
             }
-          else
-          {
-            alert("Podaj prawidłowy link do zdjęcia na www.\n\n Link do zdjęcia musi być w postaci:\n'http:\\\\adresstrony.com\\zdjecie.jpg'");
-          }
         else
         {
-          alert("Podaj swój nick");
+            alert("Podaj swój nick");
         }
+
     }
   });
 }

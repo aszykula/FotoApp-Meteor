@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.login-buttons-dropdown-align-right {
+    float: right;
+    z-index: 2000;
+}
 
 h1 {
     text-align: center;
