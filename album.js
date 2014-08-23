@@ -3,7 +3,6 @@ var czystyFormularz = function()
   $('#autor').val("");
   $('#link').val("");
   $('#opis').val("");
-  //$('#data').datetimepicker({ format: 'yyyy-mm-dd' });
 }
 
 
@@ -19,7 +18,6 @@ if (Meteor.isClient)
   Template.main.events({
     'click input.btn' : function ()
     {
-      //var data = $('#data').datetimepicker({ format: 'yyyy-mm-dd' });
       if (Meteor.user())
           var autor = Meteor.user().profile.name;
       else
